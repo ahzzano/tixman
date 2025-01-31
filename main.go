@@ -8,15 +8,15 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello World!")
-
-	token := os.Getenv("TOKEN")
+	token := os.Getenv("TIX_TOKEN")
+	println(token)
 
 	bot, err := discordgo.New("Bot " + token)
+
 	if err != nil {
-		fmt.Errorf("Error: Unable to create bot %s", err)
-		return
+		panic(fmt.Errorf("Error: Unable to create bot %s", err))
 	}
 
+	fmt.Println("Hello World!")
 	fmt.Println("%s", bot)
 }
